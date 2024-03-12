@@ -83,7 +83,7 @@ resource "aws_eks_node_group" "eks_node_group" {
   node_group_name = "worker-node-group"
   node_role_arn   = aws_iam_role.eks_node_iam_role.arn
   subnet_ids      = concat(data.aws_subnet.my_pvt_2a[*].id, data.aws_subnet.my_pvt_2c[*].id)
-  instance_types = ["t3.small"]
+  instance_types = ["t3.medium"]
   capacity_type  = "ON_DEMAND"
   remote_access {
 #    source_security_group_ids = [data.aws_security_group.my_sg_web.id]
